@@ -1,0 +1,74 @@
+@font-face {
+    font-family: "Apercu";
+    src: url('Apercu/Apercu Bold.otf'); 
+    src: local('Apercu Bold'), local('Apercu Bold'),
+        url('Apercu Bold.eot?#iefix') format('embedded-opentype');     
+}
+@font-face {
+    font-family: "Apercu Light";
+    src: url('Apercu/Apercu Light.otf'); 
+    src: local('Apercu Light'), local('Apercu Light'),
+        url('Apercu Light.eot?#iefix') format('embedded-opentype');     
+}
+
+*{
+    font-family: "Apercu", sans-serif !important;
+}
+
+
+body{
+    margin-top: 5px;
+    margin: 50px;
+    padding: 50px;
+    box-sizing: border-box;
+    font-family: "Apercu", sans-serif;
+    background: linear-gradient(60deg, #fc8892,#f5b9fa,#fdc1ff,#d9b9ff);
+    
+}
+.container{
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px 5px 5px 5px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.50);
+}
+.contentable{
+    border-collapse: collapse;
+    margin: 100px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    /*box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);*/
+    
+}
+
+
+.contentable thead tr{
+    background-color: #f728908a;
+    color: #363636;
+    text-align: left;
+    font-weight: bold;
+}
+
+.contentable th,
+.contentable td{
+   padding: 12px 15px;
+   
+}
+.contentable tbody tr{
+    border-bottom: 1px solid #f897de !important;
+}
+
+.contentable tbody tr:nth-of-type(even){
+    background-color: #fac9ed !important;
+}
+
+.contentable tbody tr:last-of-type{
+    border-bottom: 2px solid #009879;
+}
+
+.contentable tbody tr.active-row{
+    font-weight: bold;
+    color: #009879;
+}

@@ -1,0 +1,851 @@
+@font-face {font-family: "Euclid Circular B Medium";
+    src: url("721c73bcd2e49f3a621991089838b503.eot"); /* IE9*/
+    src: url("721c73bcd2e49f3a621991089838b503.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("721c73bcd2e49f3a621991089838b503.woff2") format("woff2"), /* chrome、firefox */
+    url("721c73bcd2e49f3a621991089838b503.woff") format("woff"), /* chrome、firefox */
+    url("721c73bcd2e49f3a621991089838b503.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("721c73bcd2e49f3a621991089838b503.svg#Euclid Circular B Medium") format("svg"); /* iOS 4.1- */
+}
+@font-face {font-family: "Euclid Circular A Semibold";
+	src: url("4ffb8f8bf98af1f17a1c7dd23fe80935.eot"); /* IE9*/
+	src: url("4ffb8f8bf98af1f17a1c7dd23fe80935.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.woff2") format("woff2"), /* chrome、firefox */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.woff") format("woff"), /* chrome、firefox */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.svg#Euclid Circular A Semibold") format("svg"); /* iOS 4.1- */
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Euclid Circular A Semibold", sans-serif;
+}
+
+.cbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+li, a{
+    font-family: "Euclid Circular B Medium", sans-serif !important;
+    font-weight: 500;
+    font-size: 16px;
+    color: #162546;
+    text-decoration: none;
+}
+
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #ffb7ed;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.30);
+}
+
+.logo{
+    cursor:pointer;
+    margin-right: auto;
+    width: 30px;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+   color: #0088a9;
+}
+
+button{
+    margin-left: 20px;
+    padding: 9px 25px;
+    background-color: #a300a9;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+button:hover{
+    background-color: #f83bc9;
+}
+
+.person img{
+    width: 25px;
+}
+
+.heading{
+    margin-right: 600px !important;   
+}
+
+
+
+
+
+.container{
+    position: relative;
+    width: 100%;
+}
+.navigation{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: white;
+    transition: 0.5s;
+    overflow: hidden;
+}
+.navigation.active{
+  width: 60px;
+}
+.navigation ul{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li{
+    position: relative;
+    width: 100%;
+    list-style: none;
+}
+.navigation ul li:hover{
+    background: #e7e4df;
+}
+.navigation ul li:nth-child(1){
+    margin-bottom: 5px;
+}
+
+.navigation ul li:nth-child(1):hover{
+    background: transparent;
+}
+.navigation ul li a{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: #712e8b;
+}
+.navigation ul li a .icon{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon .fas{
+    color: white;
+    font-size: 24px;
+    background: linear-gradient(30deg, #ca7fc6, #712e8b);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+.navigation ul li a .title{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    white-space: nowrap;
+}
+
+.main {
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: #e7e4df;
+    transition: 0.5s;
+}
+.main.active{
+    width: calc(100% - 60px);
+    left: 60px;
+}
+.main .topbar{
+    width: 100%;
+    background: white;
+    height: 60px;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.toggle{
+  position: relative;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+}
+.toggle::before{
+    content: '\f0c9';
+    font-family: fontAwesome;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+    color: #712e8b;
+}
+.search{
+    position: relative;
+    width: 400px;
+    margin: 0 10px;
+}
+.search label{
+    position: relative;
+    width: 100%;
+}
+.search label input{
+    width: 100%;
+    height: 40px;
+    border-radius: 40px;
+    padding: 5px 20px;
+    padding-left: 35px;
+    outline: none;
+    border: 1px solid  #712e8b;
+}
+.search label .fas{
+    position: absolute;
+    left: 15px;
+    top: 4px;
+    color: #712e8b;
+}
+.user{
+    position: relative;
+    min-width: 25px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cardBox{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:20px;
+}
+.cardBox .card{
+    position: relative;
+    background: white;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    border-radius: 5px;
+    /*box-shadow: 0 5px 10px rgb(202, 201, 201);*/
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.30);
+}
+.cardBox .card .numbers{
+    position: relative;
+    font-size: 2em;
+    font-weight: 500;
+    color: white;
+}
+.cardBox .card .cardName{
+    color: #712e8b;
+}
+
+.cardBox .card:nth-child(1) {
+    background: linear-gradient(30deg, #df7dc9, #f52d47);
+}
+.cardBox .card:nth-child(2) {
+    background: linear-gradient(30deg, #ca7f98, #7d45ff);
+}
+.cardBox .card:nth-child(3) {
+    background: linear-gradient(30deg, #7c84f8, #8b517f);
+}
+.cardBox .card:nth-child(4) {
+    background: linear-gradient(30deg, #fab5fa,  #7ba8e2);
+}
+.cardBox .card:nth-child(5) {
+    background: linear-gradient(30deg, #48cbf3, #022450);
+}
+.cardBox .card:nth-child(6) {
+    background: linear-gradient(30deg, #70d2f0, #961fe6);
+}
+.cardBox .card:nth-child(7) {
+    background: linear-gradient(30deg, #2d3b68, #ec8cbc);
+}
+.cardBox .card:nth-child(8) {
+    
+    background: linear-gradient(30deg, #eb3ac5, #9c1325);
+}
+.cardBox .card:nth-child(9) {
+    background: linear-gradient(30deg, #48cbf3, #022450);
+}
+.cardBox .card:nth-child(1) .cardName,
+.cardBox .card:nth-child(2) .cardName,
+.cardBox .card:nth-child(3) .cardName,
+.cardBox .card:nth-child(4) .cardName,
+.cardBox .card:nth-child(5) .cardName,
+.cardBox .card:nth-child(6) .cardName,
+.cardBox .card:nth-child(7) .cardName,
+.cardBox .card:nth-child(8) .cardName,
+.cardBox .card:nth-child(9) .cardName{
+    color: #fff;
+}
+
+.cardBox .card .iconBox{
+    font-size: 2em;
+}
+.fa-user{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-user-circle{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-users{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-chess-knight{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-credit-card{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-address-book{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.fa-dollar{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+}
+.fa-user-plus{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+}
+.fa-street-view{
+    font-size: 1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text; 
+}
+.fa-male{
+    font-size: 1.1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;  
+}
+.fa-camera-retro{
+    font-size: 1.1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;   
+}
+.fa-female{
+    font-size: 1.1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;   
+}
+.fa-lemon-o{
+    font-size: 1.1em;
+    color: rgb(127, 127, 150);
+    background: #fff;
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;   
+}
+.details{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr;
+}
+
+
+
+.recentOrders{
+    position: relative;
+    /*display: grid;*/
+    min-height: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgb(202, 201, 201);
+}
+.cardHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2{
+    font-weight: 600;
+}
+.btn{
+    position: relative;
+    padding: 5px 10px;
+    background: #cbffe2;
+    color: seagreen;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.details table{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thead td{
+    font-weight: 600;
+}
+.details .recentOrders table tr{
+    border-bottom: 1px solid #112266;
+}
+.details .recentOrders table tbody tr:hover{
+    background: white;
+    color: #6d89ee;
+}
+.details .recentCustomers table tbody tr:hover{
+    background: white;
+    color: #6d89ee;
+}
+.details .recentOrders table tbody tr:last-child{
+    border-bottom: none;
+}
+.details .recentOrders table tr td{
+    padding: 9px 5px;
+}
+.details .recentOrders table thead tr td:last-child,
+.details .recentOrders table tbody tr td:last-child{
+    text-align: right;
+}
+.details .recentOrders table thead tr td:nth-child(2),
+.details .recentOrders table tbody tr td:nth-child(2){
+    text-align: right;
+    padding-right: 20px;
+}
+.details .recentOrders table thead tr td:nth-child(3),
+.details .recentOrders table tbody tr td:nth-child(3){
+    text-align: center;
+}
+
+
+
+
+
+
+.details .recentOrders table td, th{
+    border: 0.5px solid #cfcfcf;
+    text-align: center;
+    padding: 8px;
+}
+.details .recentOrders table tbody tr{
+    transition: all .4s ease-in;
+
+}
+
+.details .recentOrders table thead tr{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    background: #c5d5eb;
+    color: #022450;
+    letter-spacing: 0.1rem;
+    font-size: 18px;
+}
+.details .recentCustomers table thead tr{
+    padding: 1rem 2rem;
+    text-transform: uppercase;
+    background: #c5d5eb;
+    color: #022450;
+    letter-spacing: 0.1rem;
+    font-size: 18px;
+}
+tr:nth-child(even),table.list thead>tr {
+    background-color: #fcf3f3;
+}
+
+.details .recentCustomers table td, th{
+    border: 0.5px solid #cfcfcf;
+    text-align: center;
+    padding: 8px;
+}
+
+
+.cardHeader h2{
+    font-size: 17px;
+    padding: 5px 10px;
+    background: #f3d4f1;
+    color: #712e8b;
+    text-decoration: none;
+    border-radius: 30px;
+    border: 2.5px solid #712e8b;
+}
+
+
+
+
+
+
+
+.status{
+    position: relative;
+    padding: 2px 4px;
+    background: #baccf1;
+    color: #112266;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 10px rgb(202, 201, 201);
+}
+.unpaid{
+    background: red;
+}
+.paid{
+    background: green;
+}
+.recentCustomers{
+    position: relative;
+    /*display: grid;*/
+    min-height: 300px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px rgb(202, 201, 201);
+}
+.details .recentCustomers .imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.details .recentCustomers .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.details .recentCustomers table tr td h4 span{
+    font-size: 14px;
+    color: #999;
+}
+.details .recentCustomers table tr:hover,
+.details .recentCustomers table tr:hover td h4 span{
+    background: #076c9b;
+    color: white;
+}
+.details .recentCustomers table tr td{
+    padding: 7px 10px;
+}
+.details .recentCustomers table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+
+
+
+
+
+
+.details2{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.details2 .recentCustomers .imgBx{
+    position: relative;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.details2 .recentCustomers .imgBx img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.details2 .recentCustomers table tr td h4 span{
+    font-size: 14px;
+    color: #999;
+}
+.details2 .recentCustomers table tr:hover,
+.details2 .recentCustomers table tr:hover td h4 span{
+    background: #076c9b;
+    color: white;
+}
+.details2 .recentCustomers table tr td{
+    padding: 7px 10px;
+}
+.details2 .recentCustomers table tr td h4{
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2em;
+}
+
+
+
+
+
+
+
+
+
+header{
+    position: relative;
+    background: white;
+    padding: 22px;
+    width: 100%;
+    height: 30px;
+    text-align: center;
+  }
+  
+  .left_area h3{
+    color: rgb(102, 38, 38);
+    margin: 0;
+    /*text-transform: uppercase;*/
+    font-size: 35px;
+    font-weight: 950;
+    display: inline;
+  }
+  
+  .left_area span{
+    color: seagreen;
+    font-family: "Euclid Circular B Medium";
+  }
+  .left_area .image{
+    width: 2.3%;
+    padding-right: 10px;
+}
+img {
+    width: 2%;
+}
+
+  
+  
+  .logout_btn{
+    padding: 5px;
+    background-color: seagreen;
+    /*background: -webkit-linear-gradient(left, #053823, #0c5b3c);*/
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 40px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+    font-family: "Euclid Circular B Medium";
+  }
+  
+  .logout_btn:hover, .home_btn:hover{
+    background: #24aa41;
+  }
+  .home_btn{
+    padding: 5px;
+    background-color: seagreen;
+    /*background: -webkit-linear-gradient(left, #053823, #0c5b3c);*/
+    text-decoration: none;
+    float: right;
+    margin-top: -30px;
+    margin-right: 120px;
+    border-radius: 2px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: 0.5s;
+    transition-property: background;
+    font-family: "Euclid Circular B Medium";
+  }
+
+  .left_area .next {
+      width: 2%;
+      float: left;
+      cursor: pointer;
+  }
+  
+  .left_area .prev {
+    width: 2%;
+    float: left;
+    cursor: pointer;
+    padding-right: 1px;
+    margin-right: 10px;
+  }
+  #chart-container{
+      width: auto;
+      height: auto;
+  }
+  #chart-container2{
+    width: 450px;
+    height: auto;
+}
+#chart-container4{
+    width: 450px;
+    height: auto;
+}
+
+.cbtn{
+    position: relative;
+    padding: 5px 10px;
+    background: #b4baf0;
+    color: #112266;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+  /*RESPONSIVE*/
+  @media (max-width: 992px)
+  {
+    .navigation{
+        left: -300px;
+    }
+    .navigation.active{
+        left: 0;
+        width: 300px;
+    }
+    .main{
+        width: 100%;
+        left: 0;
+    }
+    .main.active{
+        width: calc(100% - 300px);
+        left: 300px;
+    }
+    .cardBox{
+        grid-template-columns: repeat(2,1fr);
+    }
+  }
+
+  @media (max-width: 768px)
+  {
+      .details{
+          grid-template-columns: repeat(1,1fr);
+      }
+      .cardHeader h2{
+          font-weight: 600;
+          font-size: 18px;
+      }
+  }
+
+  @media (max-width: 480px)
+  {
+      .cardBox{
+          grid-template-columns: repeat(1,1fr);
+      }
+      .details .recentOrders{
+          overflow-x: auto;
+      }
+      .details .recentOrders table{
+          width: 600px;
+      }
+      .navigation{
+          width: 100%;
+          left: -100%;
+          z-index: 1000;
+      }
+      .navigation.active{
+          width:100%;
+          left: 0;
+      }
+      .toggle.active{
+          position: fixed;
+          z-index: 1000;
+          right: 0;
+          left: initial;
+      }
+      .toggle.active::before{
+          color: seagreen;
+      }
+      .main, .main.active{
+          width: 100%;
+          left: 0;
+      }
+  }

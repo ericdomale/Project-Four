@@ -1,0 +1,205 @@
+@font-face {font-family: "Euclid Circular A Semibold";
+	src: url("4ffb8f8bf98af1f17a1c7dd23fe80935.eot"); /* IE9*/
+	src: url("4ffb8f8bf98af1f17a1c7dd23fe80935.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.woff2") format("woff2"), /* chrome、firefox */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.woff") format("woff"), /* chrome、firefox */
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+	url("4ffb8f8bf98af1f17a1c7dd23fe80935.svg#Euclid Circular A Semibold") format("svg"); /* iOS 4.1- */
+}
+
+@font-face {font-family: "Euclid Circular B Medium";
+    src: url("721c73bcd2e49f3a621991089838b503.eot"); /* IE9*/
+    src: url("721c73bcd2e49f3a621991089838b503.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("721c73bcd2e49f3a621991089838b503.woff2") format("woff2"), /* chrome、firefox */
+    url("721c73bcd2e49f3a621991089838b503.woff") format("woff"), /* chrome、firefox */
+    url("721c73bcd2e49f3a621991089838b503.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url("721c73bcd2e49f3a621991089838b503.svg#Euclid Circular B Medium") format("svg"); /* iOS 4.1- */
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Euclid Circular A Semibold", sans-serif;
+}
+
+.cbody{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(150deg, #87ffb5,#f1faf2);
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 1);
+}
+
+li, a{
+    font-family: "Euclid Circular B Medium", sans-serif !important;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    color: #162546 !important;
+    text-decoration: none !important;
+}
+
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 10%;
+    background-color: #99fc99;
+}
+
+.logo{
+    cursor:pointer;
+    margin-right: auto;
+    width: 30px;
+}
+
+.nav_links{
+    list-style: none;
+}
+
+.nav_links li{
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.nav_links li a{
+    transition: all 0.3s ease 0s;
+}
+
+.nav_links li a:hover{
+   color: #0088a9;
+}
+
+button{
+    margin-left: 20px;
+    padding: 9px 25px;
+    background: linear-gradient(105deg, green,#51f8a4);
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    color: white;
+}
+
+button:hover{
+    background: #14e236;
+}
+
+.person img{
+    width: 25px;
+}
+
+.heading{
+    margin-right: 280px;   
+}
+
+.container{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin:40px 0;
+    
+}
+
+.container .box{
+    position: relative;
+    width: 200px;
+    height: 150px;
+    margin: 30px;
+    background: #dcffd4;
+    box-shadow: 0px 30px 60px rgba(0, 0, 0, 0.30);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container .box .imgBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    transform: scale(1) translateY(0);
+    background: linear-gradient(30deg, #d2fff0,#8ffca1);
+}
+
+.container .box:hover .imgBx{
+    transform: scale(1) translateY(-100%);
+}
+
+.container .box .imgBx img{
+    width: 100px;
+}
+
+
+.container .box .content{
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-direction: column;
+    transition: 0.5s;
+    background: linear-gradient(30deg, #0b1044,#14e236);
+    transform: scale(1) translateY(calc(100% - 5px));
+}
+
+.container .box:hover .content{
+    transform: scale(1);
+}
+
+.container .box:nth-child(2) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+.container .box:nth-child(3) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+.container .box:nth-child(4) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+.container .box:nth-child(5) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+.container .box:nth-child(6) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+.container .box:nth-child(7) .content{
+    background: linear-gradient(30deg, #0b1044,#14e236);
+}
+
+
+
+.container .box .content .icon img{
+      width: 80px;
+      filter: invert(1);
+}
+
+.container .box .content h3{
+    color: #fff;
+    text-transform: capitalize;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    font-family: "Euclid Circular B Medium", sans-serif;
+}
+
+
+
